@@ -11,6 +11,7 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.*;
 
 /**
  * The class that models your game. You should create a more specific
@@ -20,7 +21,11 @@ import java.util.ArrayList;
 public abstract class Game 
 {
     private final String gameName;//the title of the game
-    private ArrayList <Player> players;// the players of the game
+    private ArrayList<Players> attribute;
+	/**
+	 * the title of the game
+	 */
+	private Collection<Players> players;// the players of the game
     
     public Game(String givenName)
     {
@@ -39,17 +44,17 @@ public abstract class Game
      /**
      * @return the players of this game
      */
-    public ArrayList <Player> getPlayers() 
+    public ArrayList<Players> getAttribute() 
     {
-        return players;
+        return attribute;
     }
 
     /**
      * @param players the players of this game
      */
-    public void setPlayers(ArrayList <Player> players) 
+    public void setAttribute(ArrayList<Players> players) 
     {
-        this.players = players;
+        this.attribute = players;
     }
     
     /**
@@ -63,6 +68,14 @@ public abstract class Game
      * player.
      */
     public abstract void declareWinner();
+
+	public Collection<Players> getPlayers() {
+		return this.players;
+	}
+
+	public void setPlayers(Collection<Players> players) {
+		this.players = players;
+	}
 
    
     
